@@ -2,7 +2,7 @@
 
 CC=gcc
 CFLAGS=-Wall -ansi -pedantic
-PROJECTNAME=oop_like
+PROJECTNAME=oop_in_c
 
 INC=include
 SRC=src
