@@ -2,7 +2,7 @@
 
 #include <point.h>
 
-typedef struct Point
+typedef struct
 {
 	/* Public */
 	int (*get_x) (POINT);
@@ -13,31 +13,31 @@ typedef struct Point
 	/* Private */
 	int x;
 	int y;
-} * _POINT;
+} _POINT, * p_POINT;
 
 static int get_x (POINT p)
 {
-	return ((_POINT)p)->x;
+	return ((p_POINT)p)->x;
 }
 
 static int get_y (POINT p)
 {
-	return ((_POINT)p)->y;
+	return ((p_POINT)p)->y;
 }
 
 static void set_x (POINT p, int x)
 {
-	((_POINT)p)->x = x;
+	((p_POINT)p)->x = x;
 }
 
 static void set_y (POINT p, int y)
 {
-	((_POINT)p)->y = y;
+	((p_POINT)p)->y = y;
 }
 
 POINT point_constructor (int x, int y)
 {
-	POINT p = malloc (sizeof(struct Point));
+	POINT p = malloc (sizeof(_POINT));
 	if (p)
 	{
 		p->get_x = get_x;
