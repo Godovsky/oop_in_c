@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include <point.h>
 #include <rectangle.h>
 
