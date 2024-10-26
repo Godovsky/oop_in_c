@@ -48,11 +48,12 @@ int main (int argc, char * argv[])
 	Rectangle2->set_h(Rectangle2, 20);		
 	Rectangle2->set_x(Rectangle2, 20);
 	Rectangle2->set_y(Rectangle2, 20);
-	printf ("Rectangle2: w = %d, h = %d, x = %d, y = %d\n",
+	printf ("Rectangle2: w = %d, h = %d, x = %d, y = %d, area = %d\n",
 			Rectangle2->get_w(Rectangle2),
 			Rectangle2->get_h(Rectangle2),
 			Rectangle2->get_x(Rectangle2),
-			Rectangle2->get_y(Rectangle2));
+			Rectangle2->get_y(Rectangle2),
+			Rectangle2->get_area(Rectangle2));
 
 	point_deconstructor (Point);
 	rectangle_deconstructor (Rectangle);
