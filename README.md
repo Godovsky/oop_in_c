@@ -17,5 +17,5 @@ make run
 ```
 or
 ```shell
-./oop_in_c
+./example
 ```

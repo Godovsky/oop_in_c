@@ -3,6 +3,7 @@
 CC=gcc
 CFLAGS=-Wall -ansi -pedantic
 PROJECTNAME=oop_in_c
+EXAMPLE=example
 
 INC=include
 SRC=src
@@ -12,7 +13,7 @@ CFILES+=$(SRC)/point.c
 CFILES+=$(SRC)/rectangle.c
 
 ifeq ($(OS),Windows_NT)
-	TARGET=$(PROJECTNAME).exe
+	TARGET=$(EXAMPLE).exe
     EXTENSION=.dll
     SLIB=lib$(PROJECTNAME)$(EXTENSION)
     ECHO=echo
@@ -30,7 +31,7 @@ ifeq ($(OS),Windows_NT)
 else
     UNAME_S := $(shell uname -s)
     ifeq ($(UNAME_S),Linux)
-        TARGET=$(PROJECTNAME)
+        TARGET=$(EXAMPLE)
         EXTENSION=.so
         SLIB=lib$(PROJECTNAME)$(EXTENSION)
 		ECHO=echo
@@ -57,7 +58,7 @@ $(SLIB): $(CFILES)
 	@$(ECHO) "Building $(@F)"
 	@$(CC) $(CFLAGS) -shared $(INCLUDE) $(CFILES) -o $@
 
-$(TARGET): $(SRC)/main.c $(CFILES)
+$(TARGET): $(SRC)/$(EXAMPLE).c $(CFILES)
 	@$(ECHO) "Building $(@F)"
 	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -L./ -Wl,-rpath ./ -l$(PROJECTNAME)
 
