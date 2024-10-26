@@ -5,6 +5,8 @@
 
 typedef struct Rectangle * RECTANGLE;
 
+typedef int WIDTH, HEIGHT;
+
 struct Rectangle
 {
 	void (*set_w) (RECTANGLE, int);
@@ -20,7 +22,7 @@ struct Rectangle
 	int (*get_area) (RECTANGLE);
 };
 
-RECTANGLE rectangle_constructor (int, int, int, int);
+RECTANGLE rectangle_constructor (WIDTH, HEIGHT, X_COORDINATE, Y_COORDINATE);
 void rectangle_deconstructor (RECTANGLE);
 
 #endif

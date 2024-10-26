@@ -3,6 +3,8 @@
 
 typedef struct Point * POINT;
 
+typedef int X_COORDINATE, Y_COORDINATE;
+
 struct Point
 {
 	int	(*get_x) (POINT);
@@ -11,7 +13,7 @@ struct Point
 	void (*set_y) (POINT, int);
 };
 
-POINT point_constructor (int, int);
+POINT point_constructor (X_COORDINATE, Y_COORDINATE);
 void point_deconstructor (POINT);
 
 #endif
