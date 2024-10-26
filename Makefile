@@ -62,7 +62,7 @@ $(TARGET): $(SRC)/$(EXAMPLE).c $(CFILES)
 	@$(ECHO) "Building $(@F)"
 	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -L./ -Wl,-rpath ./ -l$(PROJECTNAME)
 
-run:
+run: all
 	@./$(TARGET)
 
 clean:

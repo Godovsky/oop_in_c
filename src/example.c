@@ -21,11 +21,12 @@ int main (int argc, char * argv[])
 			Point->get_x(Point),
 			Point->get_y(Point));
 
-	printf ("Rectangle: w = %d, h = %d, x = %d, y = %d\n",
+	printf ("Rectangle: w = %d, h = %d, x = %d, y = %d, area = %d\n",
 			Rectangle->get_w(Rectangle),
 			Rectangle->get_h(Rectangle),
 			Rectangle->get_x(Rectangle),
-			Rectangle->get_y(Rectangle));
+			Rectangle->get_y(Rectangle),
+			Rectangle->get_area(Rectangle));
 	
 	Rectangle->set_w(Rectangle, 9);
 	Rectangle->set_h(Rectangle, 8);		
@@ -38,11 +39,12 @@ int main (int argc, char * argv[])
 			Rectangle->get_y(Rectangle),
 			Rectangle->get_area(Rectangle));
 
-	printf ("Rectangle2: w = %d, h = %d, x = %d, y = %d\n",
+	printf ("Rectangle2: w = %d, h = %d, x = %d, y = %d, area = %d\n",
 			Rectangle2->get_w(Rectangle2),
 			Rectangle2->get_h(Rectangle2),
 			Rectangle2->get_x(Rectangle2),
-			Rectangle2->get_y(Rectangle2));
+			Rectangle2->get_y(Rectangle2),
+			Rectangle2->get_area(Rectangle2));
 
 	Rectangle2->set_w(Rectangle2, 20);
 	Rectangle2->set_h(Rectangle2, 20);		
