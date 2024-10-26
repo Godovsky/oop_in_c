@@ -6,13 +6,13 @@
 struct R
 {
 	/* Public */
-	void (*set_w) (RECTANGLE, int);
-	void (*set_h) (RECTANGLE, int);
+	void (*set_w) (RECTANGLE, WIDTH);
+	void (*set_h) (RECTANGLE, HEIGHT);
 	int (*get_w) (RECTANGLE);
 	int (*get_h) (RECTANGLE);
 
-	void (*set_x) (RECTANGLE, int);
-	void (*set_y) (RECTANGLE, int);
+	void (*set_x) (RECTANGLE, X_COORDINATE);
+	void (*set_y) (RECTANGLE, Y_COORDINATE);
 	int (*get_x) (RECTANGLE);
 	int (*get_y) (RECTANGLE);
 
@@ -35,12 +35,12 @@ static int get_h (RECTANGLE r)
 	return ((struct R *)r)->h;
 }
 
-static void set_w (RECTANGLE r, int w)
+static void set_w (RECTANGLE r, WIDTH w)
 {
 	((struct R *)r)->w = w;
 }
 
-static void set_h (RECTANGLE r, int h)
+static void set_h (RECTANGLE r, HEIGHT h)
 {
 	((struct R *)r)->h = h;
 }
@@ -55,12 +55,12 @@ static int get_y (RECTANGLE r)
 	return ((struct R *)r)->Point->get_y(((struct R *)r)->Point);
 }
 
-static void set_x (RECTANGLE r, int x)
+static void set_x (RECTANGLE r, X_COORDINATE x)
 {
 	((struct R *)r)->Point->set_x(((struct R *)r)->Point, x);
 }
 
-static void set_y (RECTANGLE r, int y)
+static void set_y (RECTANGLE r, Y_COORDINATE y)
 {
 	((struct R *)r)->Point->set_y(((struct R *)r)->Point, y);
 }
@@ -70,7 +70,7 @@ static int get_area (RECTANGLE r)
 	return ((struct R *)r)->w * ((struct R *)r)->h;
 }
 
-RECTANGLE rectangle_constructor (int w, int h, int x, int y)
+RECTANGLE rectangle_constructor (WIDTH w, HEIGHT h, X_COORDINATE x, Y_COORDINATE y)
 {
 	RECTANGLE r = malloc (sizeof(struct R));
 	if (r)

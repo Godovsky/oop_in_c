@@ -7,8 +7,8 @@ typedef struct
 	/* Public */
 	int (*get_x) (POINT);
 	int (*get_y) (POINT);
-	void (*set_x) (POINT,int);
-	void (*set_y) (POINT,int);
+	void (*set_x) (POINT, X_COORDINATE);
+	void (*set_y) (POINT, Y_COORDINATE);
 
 	/* Private */
 	int x;
@@ -25,17 +25,17 @@ static int get_y (POINT p)
 	return ((p_POINT)p)->y;
 }
 
-static void set_x (POINT p, int x)
+static void set_x (POINT p, X_COORDINATE x)
 {
 	((p_POINT)p)->x = x;
 }
 
-static void set_y (POINT p, int y)
+static void set_y (POINT p, Y_COORDINATE y)
 {
 	((p_POINT)p)->y = y;
 }
 
-POINT point_constructor (int x, int y)
+POINT point_constructor (X_COORDINATE x, Y_COORDINATE y)
 {
 	POINT p = malloc (sizeof(_POINT));
 	if (p)
