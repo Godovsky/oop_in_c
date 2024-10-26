@@ -9,8 +9,8 @@ struct Point
 {
 	int	(*get_x) (POINT);
 	int (*get_y) (POINT);
-	void (*set_x) (POINT, int);
-	void (*set_y) (POINT, int);
+	void (*set_x) (POINT, X_COORDINATE);
+	void (*set_y) (POINT, Y_COORDINATE);
 };
 
 POINT point_constructor (X_COORDINATE, Y_COORDINATE);
