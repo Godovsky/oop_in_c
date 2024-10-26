@@ -9,13 +9,13 @@ typedef int WIDTH, HEIGHT;
 
 struct Rectangle
 {
-	void (*set_w) (RECTANGLE, int);
-	void (*set_h) (RECTANGLE, int);
+	void (*set_w) (RECTANGLE, WIDTH);
+	void (*set_h) (RECTANGLE, HEIGHT);
 	int	(*get_w) (RECTANGLE);
 	int (*get_h) (RECTANGLE);
 	
-	void (*set_x) (RECTANGLE, int);
-	void (*set_y) (RECTANGLE, int);
+	void (*set_x) (RECTANGLE, X_COORDINATE);
+	void (*set_y) (RECTANGLE, Y_COORDINATE);
 	int (*get_x) (RECTANGLE);
 	int (*get_y) (RECTANGLE);
 
